@@ -40,7 +40,8 @@ RUN docker-php-ext-install \
     pdo_mysql \
     bcmath \
     zip \
-    && pecl install redis && docker-php-ext-enable redis
+    && pecl install redis && docker-php-ext-enable redis \
+    && pecl install mongodb && docker-php-ext-enable mongodb
 
 # Composer
 RUN curl -s https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
